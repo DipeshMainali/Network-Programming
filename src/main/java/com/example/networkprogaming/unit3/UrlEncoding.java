@@ -32,45 +32,41 @@ public class UrlEncoding {
     //        / & ? @ # ; $ + = and %
 
     public static void main(String[] args) {
-        try {
-//            URLEncoder.encode("This string has spaces", "UTF-8");
+        //            URLEncoder.encode("This string has spaces", "UTF-8");
 
-            System.out.println(URLEncoder.encode("This string has spaces", "UTF-8"));
-            System.out.println(URLEncoder.encode("This*string*has*asterisks", "UTF-8"));
-            System.out.println(URLEncoder.encode("This%string%has%percent%signs", "UTF-8"));
-            System.out.println(URLEncoder.encode("This+string+has+pluses", "UTF-8"));
-            System.out.println(URLEncoder.encode("This/string/has/slashes", "UTF-8"));
-            System.out.println(URLEncoder.encode("This\"string\"has\"quote\"marks", "UTF-8"));
-            System.out.println(URLEncoder.encode("This:string:has:colons", "UTF-8"));
-            System.out.println(URLEncoder.encode("This~string~has~tildes", "UTF-8"));
-            System.out.println(URLEncoder.encode("This(string)has(parentheses)", "UTF-8"));
-            System.out.println(URLEncoder.encode("This.string.has.periods", "UTF-8"));
-            System.out.println(URLEncoder.encode("This=string=has=equals=signs", "UTF-8"));
-            System.out.println(URLEncoder.encode("This&string&has&ampersands", "UTF-8"));
-            System.out.println(URLEncoder.encode("Thiséstringéhasé non-ASCII characters",
-                    StandardCharsets.UTF_8));
+        System.out.println(URLEncoder.encode("This string has spaces", StandardCharsets.UTF_8));
+        System.out.println(URLEncoder.encode("This*string*has*asterisks", StandardCharsets.UTF_8));
+        System.out.println(URLEncoder.encode("This%string%has%percent%signs", StandardCharsets.UTF_8));
+        System.out.println(URLEncoder.encode("This+string+has+pluses", StandardCharsets.UTF_8));
+        System.out.println(URLEncoder.encode("This/string/has/slashes", StandardCharsets.UTF_8));
+        System.out.println(URLEncoder.encode("This\"string\"has\"quote\"marks", StandardCharsets.UTF_8));
+        System.out.println(URLEncoder.encode("This:string:has:colons", StandardCharsets.UTF_8));
+        System.out.println(URLEncoder.encode("This~string~has~tildes", StandardCharsets.UTF_8));
+        System.out.println(URLEncoder.encode("This(string)has(parentheses)", StandardCharsets.UTF_8));
+        System.out.println(URLEncoder.encode("This.string.has.periods", StandardCharsets.UTF_8));
+        System.out.println(URLEncoder.encode("This=string=has=equals=signs", StandardCharsets.UTF_8));
+        System.out.println(URLEncoder.encode("This&string&has&ampersands", StandardCharsets.UTF_8));
+        System.out.println(URLEncoder.encode("Thiséstringéhasé non-ASCII characters",
+                StandardCharsets.UTF_8));
 
-            String input = "";
-            String output = URLDecoder.decode(input, StandardCharsets.UTF_8);
-            System.out.println(output);
-        } catch (UnsupportedEncodingException ex) {
-            throw new RuntimeException("Broken VM does not support UTF-8");
-        }
+        String input = "";
+        String output = URLDecoder.decode(input, StandardCharsets.UTF_8);
+        System.out.println(output);
     }
 
     public static void encodeByPart() throws UnsupportedEncodingException {
         String url = "https://www.google.com/search?";
-        url += URLEncoder.encode("hl", "UTF-8");
+        url += URLEncoder.encode("hl", StandardCharsets.UTF_8);
         url += "=";
-        url += URLEncoder.encode("en", "UTF-8");
+        url += URLEncoder.encode("en", StandardCharsets.UTF_8);
         url += "&";
-        url += URLEncoder.encode("as_q", "UTF-8");
+        url += URLEncoder.encode("as_q", StandardCharsets.UTF_8);
         url += "=";
-        url += URLEncoder.encode("Java", "UTF-8");
+        url += URLEncoder.encode("Java", StandardCharsets.UTF_8);
         url += "&";
-        url += URLEncoder.encode("as_epq", "UTF-8");
+        url += URLEncoder.encode("as_epq", StandardCharsets.UTF_8);
         url += "=";
-        url += URLEncoder.encode("I/O", "UTF-8");
+        url += URLEncoder.encode("I/O", StandardCharsets.UTF_8);
         System.out.println(url);
     }
 
